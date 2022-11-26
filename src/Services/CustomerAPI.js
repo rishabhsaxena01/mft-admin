@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BACKEND_URL = 'http://localhost:8000';
+const BACKEND_URL = process.env.REACT_APP_HOST_DEV;
 
 const addCustomer = async (customer) => {
     return await axios.post(BACKEND_URL + "/customer/add", customer);

@@ -14,7 +14,6 @@ const Home = () => {
     const gettingData = () => {
         getAllCustomer()
             .then((res) => {
-                console.log("Customers ", res.data)
                 setAllCustomers(res.data);
             })
             .catch((err) => {
@@ -26,7 +25,6 @@ const Home = () => {
             })
         getAllFranchise()
             .then((res) => {
-                console.log("Franchises ", res.data)
                 setAllFranchise(res.data);
             })
             .catch((err) => {
@@ -38,7 +36,6 @@ const Home = () => {
             })
         getAllSubscription()
             .then((res) => {
-                console.log("Subscription ", res.data)
                 setAllSubscriptions(res.data);
             })
             .catch((err) => {
@@ -53,7 +50,7 @@ const Home = () => {
 
     useEffect(() => {
         gettingData();
-    }, [allSubscriptions]);
+    }, [allSubscriptions, allCustomers, allFranchise]);
 
 
     return (

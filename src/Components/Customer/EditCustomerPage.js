@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, useParams, } from "react-router-dom";
 import { getCustomerById, editCustomer } from '../../Services';
 import Navbar from '../Navbar';
+import { generatePublicUrl } from '../../urlConfig';
 
 const EditCustomerPage = () => {
 
@@ -163,8 +164,9 @@ const EditCustomerPage = () => {
                     </div>
 
                     <div className="mb-3">
-                        <label htmlFor="image" className="form-label">Image</label>
-                        <input onChange={setData} value={preValue.image} type="text" className="form-control" name="image" id="image" />
+                        <label htmlFor="image" className="form-label">Image: </label>
+                        <img width="15%" src={generatePublicUrl(preValue.image)} alt="image" />
+                        {/* <input onChange={setData} value={preValue.image} type="text" className="form-control" name="image" id="image" /> */}
                     </div>
 
                     {error &&

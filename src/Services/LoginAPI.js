@@ -1,12 +1,13 @@
 import axios from 'axios';
 
-const BACKEND_URL = 'http://localhost:8000';
+const BACKEND_URL = process.env.REACT_APP_HOST_DEV;
 
 const register = async (user) => {
     return await axios.post(BACKEND_URL + "/registerUser", user);
 }
 
 const login = async (user) => {
+    console.log(BACKEND_URL)
     return await axios.post(BACKEND_URL + "/loginUser", user);
 }
 
