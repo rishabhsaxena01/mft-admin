@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { getCustomerById, deleteCustomer } from '../../Services';
 import Navbar from '../Navbar';
-
+import { generatePublicUrl } from '../../urlConfig';
 const DeleteCustomerPage = () => {
     const [cust, setCust] = useState({});
 
@@ -63,7 +63,7 @@ const DeleteCustomerPage = () => {
                         <li className="list-group-item"><b>Package Adopt: </b> {cust.packageAdopt}</li>
                         <li className="list-group-item"><b>Program Type: </b> {cust.programType}</li>
                         <li className="list-group-item"><b>Terms & Conditions: </b> {cust.tAndC ? "Followed" : "Not Followed"}</li>
-                        <li className="list-group-item"><b>Image: </b> {cust.image}</li>
+                        <li className="list-group-item"><b>Image: </b> <img  width="15%" src={generatePublicUrl(cust.image)} alt="image" /></li>
                     </ul>
                 </div>
             </div>

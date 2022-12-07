@@ -14,6 +14,7 @@ import DeleteCustomerPage from './Components/Customer/DeleteCustomerPage';
 import ViewFranchisePage from './Components/Franchise/ViewFranchisePage';
 import DeleteFranchisePage from './Components/Franchise/DeleteFranchisePage';
 import EditFranchisePage from './Components/Franchise/EditFranchisePage';
+import ChangePassword from './Components/ChangePassword';
 
 axios.defaults.withCredentials = true
 
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/changePassword" component={ChangePassword} />
 
           <Route exact path="/addCustomer" component={AddCustomerPage} />
           <Route exact path="/updateCustomer/:id" component={EditCustomerPage} />

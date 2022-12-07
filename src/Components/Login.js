@@ -58,6 +58,10 @@ const Login = () => {
                     <div className='mt-2'>
                         <NavLink to="/register" className="text-primary ">Don't have a account? Register Now</NavLink>
                     </div>
+                    <br/>
+                    <div className='mt-2'>
+                        <NavLink to="/changePassword" className="text-primary ">Forgot Password ?</NavLink>
+                    </div>
                 </form>
             </div>
         </>

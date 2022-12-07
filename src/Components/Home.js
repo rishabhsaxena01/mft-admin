@@ -50,7 +50,7 @@ const Home = () => {
 
     useEffect(() => {
         gettingData();
-    }, [allSubscriptions, allCustomers, allFranchise]);
+    }, []);
 
 
     return (

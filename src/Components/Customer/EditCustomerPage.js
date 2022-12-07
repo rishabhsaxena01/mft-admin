@@ -31,7 +31,7 @@ const EditCustomerPage = () => {
                 console.log(res.data)
                 setPrevFunc({
                     ...res.data,
-                    dob: new Date(res.data.dob).toLocaleDateString('en-GB')
+                    // dob: new Date(res.data.dob).toLocaleDateString('en-GB')
                 });
             })
             .catch((error) => {
@@ -69,6 +69,22 @@ const EditCustomerPage = () => {
             })
     }
 
+    function formatDate(date) {
+        console.log("date is ",date)
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+    
+        if (month.length < 2) 
+            month = '0' + month;
+        if (day.length < 2) 
+            day = '0' + day;
+    
+        return [year, month, day].join('-');
+        
+    }
+
     return (
         <>
             <Navbar />
@@ -86,7 +102,7 @@ const EditCustomerPage = () => {
 
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Email</label>
-                        <input onChange={setData} value={preValue.email} type="email" className="form-control" name="email" id="email" />
+                        <input disabled onChange={setData} value={preValue.email} type="email" className="form-control" name="email" id="email" />
                     </div>
 
                     <div className="mb-3">
@@ -96,7 +112,7 @@ const EditCustomerPage = () => {
 
                     <div className="mb-3">
                         <label htmlFor="dob" className="form-label">Date of Birth</label>
-                        <input onChange={setData} value={preValue.dob} type="date" className="form-control" name="dob" id="dob" />
+                        <input onChange={setData} value={formatDate(preValue.dob)} type="date" className="form-control" name="dob" id="dob" />
                     </div>
 
 
@@ -138,9 +154,10 @@ const EditCustomerPage = () => {
                             name="packageAdopt"
                             id="packageAdopt"
                         >
-                            <option value={"1 Months"}>1 Month</option>
-                            <option value={"2 Months"}>2 Month</option>
-                            <option value={"3 Months"}>3 Month</option>
+                            <option value={"Basic"}>Basic</option>
+                            <option value={"Beginner"}>Beginner</option>
+                            <option value={"Premium"}>Premium</option>
+                            <option value={"Ultimate"}>Ultimate</option>
                         </select>
                     </div>
 
@@ -153,9 +170,13 @@ const EditCustomerPage = () => {
                             name="programType"
                             id="programType"
                         >
-                            <option value={"Full body"}>Full body</option>
-                            <option value={"Cardio"}>Cardio</option>
-                            <option value={"Extra Exercise"}>Extra Exercise</option>
+                            <option value={"Strength Training"}>Strength Training</option>
+                            <option value={"Powerlifting"}>Powerlifting</option>
+                            <option value={"HIIT/Cardio"}>HIIT/Cardio</option>
+                            <option value={"Quick Result"}>Quick Result</option>
+                            <option value={"Tabata"}>Tabata</option>
+                            <option value={"Yoga"}>Yoga</option>
+                            <option value={"Zumba"}>Zumba</option>
                         </select>
                     </div>
 
