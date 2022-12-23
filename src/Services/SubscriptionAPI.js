@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_HOST_DEV;
+const BACKEND_URL = process.env.REACT_APP_HOST_DEV || "http://localhost:8000";
 
 const addSubscription = async (subscription) => {
     return await axios.post(BACKEND_URL + "/subscription/add", subscription);
