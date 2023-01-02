@@ -249,7 +249,7 @@ const Home = () => {
                       <button
                           className="btn btn-primary"
                         >
-                          <a href={`mailto:${value.email}`} style={{textDecoration:"none", color:"white"}}>Reply</a>
+                          <a href={`mailto:${value.email}?subject=Regarding ${value.subject}&body=Dear ${value.name}`}>Reply</a>
                         </button>
                         <button
                           onClick={() => {
